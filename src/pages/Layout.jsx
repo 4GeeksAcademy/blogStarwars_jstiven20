@@ -1,15 +1,9 @@
-import { Outlet } from "react-router-dom/"
+import { Outlet } from "react-router-dom"
 import ScrollToTop from "../components/ScrollToTop"
 import { Navbar } from "../components/Navbar"
 import { Footer } from "../components/Footer"
 import Home from "../pages/Home";
 import DetailsPage from "../pages/DetailsPage";
-
-
-<Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/:type/:uid" element={<DetailsPage />} />
-</Routes>
 
 // Base component that maintains the navbar and footer throughout the page and the scroll to top functionality.
 export const Layout = () => {

@@ -42,7 +42,6 @@ const Home = () => {
 
   return (
     <>
-      <h1 className="text-center mt-5">Hello from Home</h1>
       <div className="container-fluid">
         <CardList
           title="Characters"

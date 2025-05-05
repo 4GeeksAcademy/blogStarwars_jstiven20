@@ -34,17 +34,17 @@ export default function storeReducer(store, action = {}) {
         loading: false
       };
 
-      case 'toggle_favorite': //agrega o elimina una entidad del array de favoritos
-        const exist = store.favorites.some(
-          fav => fav.uid === action.payload.uid && fav.tyupe === action.payload.type
-        );
-      return{
-        ...store,
-        favorites: exists
-          ? store.favorites.filter(fav => !(fav.uid === action.payload.uid && fav.type === action.payload.type))
-          : [...store.favorites, action.payload]
-      };
-    
+      case "toggle_favorite": {
+        const { uid, name, type } = action.payload;
+        const exists = store.favorites.some((fav) => fav.uid === uid && fav.type === type);
+      
+        return {
+          ...store,
+          favorites: exists
+            ? store.favorites.filter((fav) => !(fav.uid === uid && fav.type === type))
+            : [...store.favorites, { uid, name, type }]
+        };
+      }
     default:
       throw new Error(`Unknown action type: ${action.type}`);
   }    
