@@ -12,7 +12,7 @@ export const Layout = () => {
           <Navbar />
           <ScrollToTop />
           <Outlet />
-          {/* <Footer /> */}
+          <Footer /> 
         </>
       );
     };

@@ -14,26 +14,16 @@ const Card = ({ uid, name, type, details }) => {
     dispatch({ type: "toggle_favorite", payload: { uid, name, type } });
   };
 
-  const getImageUrl = (type, uid) => {
-    const base = "https://starwars-visualguide.com/assets/img";
-    const map = {
-      people: "characters",
-      planets: "planets",
-      vehicles: "vehicles",
-    };
-    return `${base}/${map[type]}/${uid}.jpg`;
-  };
-
   return (
     <div className="card m-2" style={{ minWidth: "18rem" }}>
       <img
-  src={getImageUrl(type, uid)}
-  className="card-img-top"
-  alt={name}
-  onError={(e) => {
-    e.target.src = "https://starwars-visualguide.com/assets/img";
-  }}
-/>
+        src="https://greenparrotrestaurantandpub.com/wp-content/uploads/2023/12/burger.jpg"
+        className="card-img-top"
+        alt={name}
+        onError={(e) => {
+          e.target.src = "/images/default.jpg"; // imagen fallback local
+        }}
+      />
 
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
@@ -56,7 +46,7 @@ const Card = ({ uid, name, type, details }) => {
             )}
           </ul>
         )}
-                <div className="d-flex justify-content-between mt-3">
+        <div className="d-flex justify-content-between mt-3">
           <Link to={`/${type}/${uid}`} className="btn btn-outline-primary">
             Learn more!
           </Link>

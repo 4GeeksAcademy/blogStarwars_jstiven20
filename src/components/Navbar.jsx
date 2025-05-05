@@ -7,27 +7,24 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
-    // ✅ Redirige a Home
+   
     navigate("/");
-
-    // (Opcional) Si quieres reiniciar el estado global, descomenta:
-    // dispatch({ type: "reset_store" });
   };
 
   return (
     <>
       <nav className="navbar bg-body-tertiary px-3">
         <div className="container-fluid d-flex align-items-center justify-content-between">
-          {/* ✅ Logo a la izquierda */}
+    
           <img
-            src="/assets/img/Logo.png"
+            src="https://github.com/4GeeksAcademy/blogStarwars_jstiven20/blob/master/src/assets/img/Logo.png?raw=true"
             alt="Logo"
             height="40"
             style={{ cursor: "pointer" }}
             onClick={handleLogoClick}
           />
 
-          {/* Botón hamburguesa a la derecha */}
+         
           <button
             className="navbar-toggler"
             type="button"
