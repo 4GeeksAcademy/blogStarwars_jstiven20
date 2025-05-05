@@ -45,19 +45,19 @@ const Home = () => {
       <div className="container-fluid">
         <CardList
           title="Characters"
-          items={store.people}
+          items={store.people.slice(0, 3)}
           type="people"
           detailsMap={store.people_details || {}}
         />
         <CardList
           title="Vehicles"
-          items={store.vehicles}
+          items={store.vehicles.slice(0, 3)}
           type="vehicles"
           detailsMap={store.vehicles_details || {}}
         />
         <CardList
           title="Planets"
-          items={store.planets}
+          items={store.planets.slice(0, 3)}
           type="planets"
           detailsMap={store.planets_details || {}}
         />

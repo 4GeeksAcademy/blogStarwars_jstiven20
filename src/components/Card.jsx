@@ -27,14 +27,14 @@ const Card = ({ uid, name, type, details }) => {
   return (
     <div className="card m-2" style={{ minWidth: "18rem" }}>
       <img
-        src={getImageUrl(type, uid)}
-        className="card-img-top"
-        alt={name}
-        onError={(e) => {
-          e.target.src =
-            "https://starwars-visualguide.com/assets/img/big-placeholder.jpg";
-        }}
-      />
+  src={getImageUrl(type, uid)}
+  className="card-img-top"
+  alt={name}
+  onError={(e) => {
+    e.target.src = "https://starwars-visualguide.com/assets/img";
+  }}
+/>
+
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         {details && (
